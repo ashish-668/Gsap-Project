@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Practice</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+        }
+
+        .orange-gradient {
+            background: linear-gradient(135deg, #ff6b35, #ff9f1c);
+        }
+
+        .outline-text {
+            -webkit-text-stroke: 1px #ffffff;
+            color: transparent;
+        }
+
+        .glow {
+            box-shadow: 0 0 60px rgba(255, 107, 53, 0.15);
+        }
+    </style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+    <nav class="w-full px-6 md:px-16 py-6 flex items-center justify-between border-b border-white/10">
+        <h2 class="text-2xl font-bold tracking-tight">
+            GSAP<span class="text-orange-500">.</span>
+        </h2>
+
+        <div class="hidden md:flex items-center gap-10 text-sm text-gray-400">
+            <a href="#home" class="hover:text-orange-500 transition">Home</a>
+            <a href="#features" class="hover:text-orange-500 transition">Features</a>
+            <a href="#practice" class="hover:text-orange-500 transition">Practice</a>
+            <a href="#about" class="hover:text-orange-500 transition">About</a>
+        </div>
+
+        <a href="#practice"
+            class="orange-gradient text-black font-semibold px-6 py-3 rounded-full text-sm hover:scale-105 transition">
+            Start Practicing ↗
+        </a>
+    </nav>
+
+
+
+    <section id="home" class="min-h-[90vh] px-6 md:px-16 flex items-center relative overflow-hidden">
+
+        <div class="absolute w-80 h-80 bg-orange-500/10 blur-[120px] rounded-full right-10 top-20"></div>
+
+        <div class="max-w-5xl relative z-10">
+
+            <div class="flex items-center gap-3 mb-8">
+                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                <p class="uppercase tracking-[5px] text-xs text-gray-400">
+                    Creative Animation Playground
+                </p>
+            </div>
+
+            <h1 class="text-6xl md:text-8xl lg:text-[110px] font-bold leading-[0.95] tracking-tight">
+                MAKE YOUR
+                <span class="block text-orange-500">IDEAS</span>
+                <span class="outline-text block">MOVE.</span>
+            </h1>
+
+            <div class="mt-10 flex flex-col md:flex-row md:items-center gap-8">
+
+                <p class="text-gray-400 max-w-md leading-7">
+                    Explore the world of motion. Experiment with animations,
+                    create beautiful interactions and bring your creativity to life.
+                </p>
+
+                <a href="#practice"
+                    class="orange-gradient text-black px-8 py-4 rounded-full font-semibold w-fit hover:scale-105 transition">
+                    Explore Animations ↗
+                </a>
+
+            </div>
+
+            <div class="mt-16 flex flex-wrap gap-12 border-t border-white/10 pt-8">
+
+                <div>
+                    <h3 class="text-3xl font-bold">GSAP</h3>
+                    <p class="text-gray-500 text-sm mt-1">Animation Library</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">100%</h3>
+                    <p class="text-gray-500 text-sm mt-1">Creative Freedom</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">∞</h3>
+                    <p class="text-gray-500 text-sm mt-1">Possibilities</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="features" class="py-28 px-6 md:px-16 bg-[#101010]">
+
+        <div class="max-w-7xl mx-auto">
+
+            <p class="text-orange-500 uppercase tracking-[4px] text-xs mb-5">
+                What You Can Explore
+            </p>
+
+            <h2 class="text-4xl md:text-6xl font-bold max-w-2xl leading-tight">
+                Motion is more than just movement.
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-16">
+
+                <div
+                    class="feature-card bg-[#191919] border border-white/10 p-8 rounded-3xl hover:border-orange-500/50 transition">
+                    <div class="text-orange-500 text-4xl mb-10">01</div>
+                    <h3 class="text-2xl font-semibold mb-4">Smooth Motion</h3>
+                    <p class="text-gray-400 leading-7">
+                        Create smooth transitions using duration, ease, delay and transform properties.
+                    </p>
+                </div>
+
+                <div
+                    class="feature-card bg-[#191919] border border-white/10 p-8 rounded-3xl hover:border-orange-500/50 transition">
+                    <div class="text-orange-500 text-4xl mb-10">02</div>
+                    <h3 class="text-2xl font-semibold mb-4">Timeline Magic</h3>
+                    <p class="text-gray-400 leading-7">
+                        Combine multiple animations using GSAP timelines and control their sequence.
+                    </p>
+                </div>
+
+                <div
+                    class="feature-card bg-[#191919] border border-white/10 p-8 rounded-3xl hover:border-orange-500/50 transition">
+                    <div class="text-orange-500 text-4xl mb-10">03</div>
+                    <h3 class="text-2xl font-semibold mb-4">Scroll Effects</h3>
+                    <p class="text-gray-400 leading-7">
+                        Make elements appear, move and transform as visitors scroll through your page.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="practice" class="py-28 px-6 md:px-16">
+
+        <div class="max-w-7xl mx-auto">
+
+            <p class="text-orange-500 uppercase tracking-[4px] text-xs mb-5">
+                Animation Playground
+            </p>
+
+            <h2 class="text-4xl md:text-6xl font-bold">
+                Let's play with motion.
+            </h2>
+
+            <p class="text-gray-400 mt-5 max-w-xl">
+                These elements are waiting for your GSAP animations.
+                Select your target and experiment with different properties.
+            </p>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">01 / TRANSLATE</span>
+                        <h3 class="text-2xl font-semibold mt-3">Move It</h3>
+                    </div>
+                    <div class="flex justify-center items-center h-36">
+                        <div class="box w-24 h-24 orange-gradient rounded-2xl glow"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try x, y and duration</p>
+                </div>
+
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">02 / ROTATION</span>
+                        <h3 class="text-2xl font-semibold mt-3">Spin It</h3>
+                    </div>
+                    <div class="flex justify-center items-center h-36">
+                        <div class="rotate-box w-24 h-24 bg-orange-500 rounded-full relative">
+
+
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-0 origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[36deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[72deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[108deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[144deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[180deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[216deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[252deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[288deg] origin-[50%_48px]"></span>
+                            <span
+                                class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-5 bg-white rotate-[324deg] origin-[50%_48px]"></span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try rotation and repeat</p>
+                </div>
+
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">03 / SCALE</span>
+                        <h3 class="text-2xl font-semibold mt-3">Scale It</h3>
+                    </div>
+                    <div class="flex justify-center items-center h-36">
+                        <div class="scale-box w-24 h-24 border-4 border-orange-500 rounded-2xl"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try scale and yoyo</p>
+                </div>
+
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">04 / SKEW</span>
+                        <h3 class="text-2xl font-semibold mt-3">Skew It</h3>
+                    </div>
+                    <div class="flex justify-center items-center h-36">
+                        <div class="skew-box w-24 h-24 bg-orange-500 rounded-xl"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try skewX and skewY</p>
+                </div>
+
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">05 / OPACITY</span>
+                        <h3 class="text-2xl font-semibold mt-3">Fade It</h3>
+                    </div>
+                    <div class="flex justify-center items-center h-36">
+                        <div class="fade-box w-24 h-24 bg-white rounded-2xl"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try opacity and repeat</p>
+                </div>
+
+
+                <div class="bg-[#171717] border border-white/10 rounded-3xl p-8 min-h-80 flex flex-col justify-between">
+                    <div>
+                        <span class="text-orange-500 text-sm">06 / STAGGER</span>
+                        <h3 class="text-2xl font-semibold mt-3">Stagger It</h3>
+                    </div>
+                    <div class="flex justify-center items-center gap-3 h-36">
+                        <div class="stagger-box w-12 h-12 bg-orange-500 rounded-lg"></div>
+                        <div class="stagger-box w-12 h-12 bg-orange-500 rounded-lg"></div>
+                        <div class="stagger-box w-12 h-12 bg-orange-500 rounded-lg"></div>
+                        <div class="stagger-box w-12 h-12 bg-orange-500 rounded-lg"></div>
+                    </div>
+                    <p class="text-gray-500 text-sm">Try stagger</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="about" class="min-h-screen bg-[#101010] px-6 md:px-16 py-28 flex items-center">
+
+        <div class="max-w-7xl mx-auto w-full">
+
+            <p class="text-orange-500 uppercase tracking-[4px] text-xs mb-6">
+                ScrollTrigger Practice
+            </p>
+
+            <h2 class="text-5xl md:text-8xl font-bold leading-tight scroll-heading">
+                SCROLL.
+                <span class="text-orange-500 block">DISCOVER.</span>
+                CREATE.
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-24">
+
+                <div class="scroll-card-1 rounded-3xl bg-[#1b1b1b] p-10 border border-white/10">
+                    <span class="text-orange-500 text-4xl font-bold">01</span>
+                    <h3 class="text-2xl mt-6 font-semibold">Enter</h3>
+                    <p class="text-gray-400 mt-3">Animate elements when they enter the viewport.</p>
+                </div>
+
+                <div class="scroll-card-2 rounded-3xl bg-[#1b1b1b] p-10 border border-white/10">
+                    <span class="text-orange-500 text-4xl font-bold">02</span>
+                    <h3 class="text-2xl mt-6 font-semibold">Transform</h3>
+                    <p class="text-gray-400 mt-3">Change position, size and appearance while scrolling.</p>
+                </div>
+
+                <div class="scroll-card-3 rounded-3xl bg-[#1b1b1b] p-10 border border-white/10">
+                    <span class="text-orange-500 text-4xl font-bold">03</span>
+                    <h3 class="text-2xl mt-6 font-semibold">Reveal</h3>
+                    <p class="text-gray-400 mt-3">Create impressive scroll-based reveal effects.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="py-12 px-6 md:px-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-5">
+            <h2 class="text-2xl font-bold">GSAP<span class="text-orange-500">.</span></h2>
+            <p class="text-gray-500 text-sm">Practice. Experiment. Animate. Repeat.</p>
+            <p class="text-gray-600 text-sm">Built for creative minds © 2026</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+
+        gsap.from(".stagger-box", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            repeat: -1,
+        });
+
+        gsap.to(".rotate-box", {
+            rotation: 360,
+            opacity: 0.7,
+            duration: 0.5,
+            repeat: -1,
+
+        },)
+
+        gsap.from(".box", {
+            x: -300,
+            repeat: -1,
+            y: 200,
+        })
+
+        gsap.from(".scale-box", {
+            scale: 1.5,
+            repeat: -1,
+        })
+
+        gsap.from(".fade-box", {
+            opacity: 0,
+            duration: 0.3,
+            repeat: -1,
+        })
+
+        gsap.from(".scroll-heading", {
+            repeat: -1,
+            x: - 500,
+            duration: 1,
+        })
+
+        gsap.from(".text-6xl", {
+            repeat: -1,
+            x: - 500,
+            duration: 1,
+        })
+
+
+        gsap.from(".skew-box", {
+            skewX: 40,
+            repeat: -1,
+        })
+
+
+       
+
+       let tl = gsap.timeline();
+
+tl.to(".scroll-card-1", {
+    y: 50,
+    duration: 1,
+    repeat: -1,
+});
+
+tl.to(".scroll-card-2", {
+    y: -50,
+    duration: 1,
+    repeat: -1,
+});
+
+tl.to(".scroll-card-3", {
+    y: 50,
+    duration: 1,
+    repeat: -1,
+});
+    </script>
+
+</body>
+
+</html>
