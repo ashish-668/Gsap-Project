@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Nature Animation</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+    <section
+        class="section bg-gradient-to-br from-[#052E16] via-[#14532D] to-[#365314] min-h-screen flex items-center justify-center w-full flex-col">
+
+        <div class="mx-auto w-full max-w-[1320px] px-5">
+
+            <div class="parent flex items-center justify-center relative w-full">
+
+
+                <div class="box2 w-[200px] h-[300px] relative z-0 overflow-hidden rounded-3xl">
+                    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+                        class="w-full h-full object-cover" alt="Beautiful sunrise over nature">
+
+                    <div class="absolute inset-0 bg-black/20"></div>
+
+                    <h2 class="absolute bottom-6 left-0 w-full text-center text-white text-xl font-bold">
+                        Sunrise
+                    </h2>
+                </div>
+
+
+                <div class="box3 w-[200px] h-[300px] relative z-0 overflow-hidden rounded-3xl">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600"
+                        class="w-full h-full object-cover" alt="Beautiful green forest">
+
+                    <div class="absolute inset-0 bg-black/20"></div>
+
+                    <h2 class="absolute bottom-6 left-0 w-full text-center text-white text-xl font-bold">
+                        Forest
+                    </h2>
+                </div>
+
+
+                <div class="box1 w-[200px] h-[300px] absolute z-10 overflow-hidden rounded-3xl">
+
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600"
+                        class="w-full h-full object-cover" alt="Beautiful mountain landscape">
+
+                    <div class="absolute inset-0 bg-black/20"></div>
+
+                    <h2 class="absolute bottom-6 left-0 w-full text-center text-white text-xl font-bold">
+                        Mountains
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        class="bg-gradient-to-br from-[#052E16] via-[#14532D] to-[#365314] min-h-screen flex items-center  justify-center">
+        <div class="w-full min-h-screen flex items-center justify-center">
+            <div class="mx-auto px-5 w-full max-w-[1320]">
+                <div class="flex items-center justify-center flex-col">
+                    <h1 class="heading text-white leading-normal capitalize italic mb-10">
+                        this is ths heading of this web page
+                    </h1>
+                    <p class="max-w-[700px] w-full max-md:max-w-full text-center capitalize italic paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nisi facere facilis veniam
+                        asperiores iure non sint quia eligendi dolor sunt voluptatum, dolorum laudantium quam eos, quos
+                        repellendus ut autem quod ex ipsa sapiente nihil! Animi, errororem hic labore consectetur
+                        asperiores eos rerum accusamus expedita atque minus corrupti explicabo neque id blanditiis
+                        veniam aut sapiente nam aspernatur possimus quae. Laudantium architecto molestiae magni nisi
+                        culpa et quaerat omnis perferendis animi sequi quod magnam aspernatur iste reprehenderit, dicta
+                        enim nobis porro numquam officiis earum voluptatum velit quas doloremque? Doloremque, fuga
+                        similique at veritatis facilis voluptatum modi deleniti. Suscipit laudantium expedita possimus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+
+    <script>
+
+        gsap.registerPlugin(SplitText);
+
+        const split = SplitText.create(".heading", {
+            type: "chars",
+        });
+
+        gsap.from(split.chars, {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.1,
+        });
+
+        const parasplit = SplitText.create(".paragraph", {
+            type: "lines",
+        });
+
+        gsap.from(parasplit.lines, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            repeat: -1,
+        });
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        let mm = gsap.matchMedia();
+
+
+        mm.add("(min-width: 1024px)", () => {
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".section",
+                    start: "top top",
+                    end: "+=1000",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            tl.fromTo(".box2",
+                {
+                    x: 100,
+                },
+
+                {
+                    x: -50,
+                    duration: 1,
+                    rotation: -10,
+                }
+            );
+
+            tl.fromTo(".box3",
+                {
+                    x: -100,
+                },
+                
+                {
+                    x: 50,
+                    duration: 1,
+                    rotation: 10,
+                },
+                "<"
+            );
+
+        });
+
+
+        mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".section",
+                    start: "top top",
+                    end: "+=800",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            tl.to(".box2", {
+                x: -30,
+                rotation: -7,
+            });
+
+            tl.to(".box3", {
+                x: 30,
+                rotation: 7,
+            }, "<");
+
+        });
+
+        mm.add("(max-width: 767px)", () => {
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".section",
+                    start: "top top",
+                    end: "+=600",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            tl.to(".box2", {
+                x: -10,
+                rotation: -5,
+                y: 10,
+            });
+
+            tl.to(".box3", {
+                x: 10,
+                rotation: 5,
+                y: 10,
+            }, "<");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
